@@ -1,6 +1,6 @@
 <div align="center">
 
-  # Practice: Order & Items 
+  #  :beer: :cup_with_straw:	Practice: Order & Items 🚬 📱	
   
 </div>
 
@@ -9,7 +9,7 @@
  ## :page_with_curl: Description
   
 The purpose of this practice was the use of Object Oriented Programming concepts, with the use of classes, inheritance, abstraction, 
-encapsulation.
+encapsulation and abstract class.
 
 Classes
 - `Item`
@@ -26,7 +26,7 @@ Classes
     - `Beer`
         - This class is inherited from the TaxItem class.
         - Has a `getTaxes` method that returns the tax rate of the item.
-    - `Cigarette`
+    - `Cigar`
         - This class is inherited from the TaxItem class.
         - Has a `getTaxes` method that returns the tax rate of the item.
     - `Electronics`
