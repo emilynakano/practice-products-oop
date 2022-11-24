@@ -8,16 +8,12 @@ export default class Order {
         this.items.push(item)
     }
     getTotal() {
-        return this.items.reduce((partialSum, { price }) => partialSum + price, 0);
+        return this.items.reduce((sum, { price }) => sum + price, 0);
     }
     getTaxes() {
-        let taxesSum = 0;
-        this.items.map((item) => {
-            if(item instanceof TaxItem) {
-                const tax = item.getTaxes();
-                taxesSum += item.calculateTax(tax)
-            }
-        });
-        return taxesSum;
+        return this.items.reduce((sum, item) => {
+            if(item instanceof TaxItem) sum += item.calculateTax()
+            return sum
+        }, 0);
     }
 }

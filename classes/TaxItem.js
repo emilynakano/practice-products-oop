@@ -9,8 +9,13 @@ export default class TaxItem extends Item {
         }
     } 
 
-    calculateTax(tax) {
+    calculateTax() {
+        const tax = this.getTaxes();
         const charge = this.price * tax;
         return charge;
+    }
+
+    getTaxes() {
+        return 0
     }
 }
