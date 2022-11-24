@@ -1,3 +1,5 @@
+import TaxItem from "./TaxItem.js";
+
 export default class Order {
     constructor() {
         this.items = []
@@ -9,12 +11,13 @@ export default class Order {
         return this.items.reduce((partialSum, { price }) => partialSum + price, 0);
     }
     getTaxes() {
-        const taxes = {
-            'Beer': 0.20,
-            'Cigar': 0.25,
-            'Eletronics': 0.30,
-            'Water': 0
-        }
-        return this.items.reduce((partialSum, { price, category }) => partialSum + (price * taxes[category]), 0);
+        let taxesSum = 0;
+        this.items.map((item) => {
+            if(item instanceof TaxItem) {
+                const tax = item.getTaxes();
+                taxesSum += item.calculateTax(tax)
+            }
+        });
+        return taxesSum;
     }
 }

@@ -1,6 +1,6 @@
-import TaxItem from "../TaxItem"
+import TaxItem from "../TaxItem.js"
 
-export default class Beer extends TaxItem {
+export default class Eletronics extends TaxItem {
     constructor(category, mark, price) {
         super(category, mark, price)
     }
