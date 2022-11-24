@@ -18,5 +18,5 @@ test("Deve criar um pedido e calcular os impostos", () => {
   order.addItem(new Item("Eletronics", "IPhone 13", 13000));
   order.addItem(new Item("Water", "Crystal", 1));
   const taxes = order.getTaxes();
-  expect(taxes).toBe(3903.7);
+  expect(taxes).toBe(3905.1);
 });
