@@ -1,5 +1,5 @@
-import Item from "./../src/Item";
-import Order from "./../src/Order";
+import Item from "../classes/Item.js";
+import Order from "../classes/Order.js";
 
 test("Deve criar um pedido e calcular o total", () => {
   const order = new Order();
