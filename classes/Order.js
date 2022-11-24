@@ -1,15 +1,20 @@
 export default class Order {
     constructor() {
-        this.total = 0
-        this.taxe = 0.30
+        this.items = []
     }
     addItem(item) {
-        this.total += item.price
+        this.items.push(item)
     }
     getTotal() {
-        return this.total
+        return this.items.reduce((partialSum, { price }) => partialSum + price, 0);
     }
     getTaxes() {
-        return this.getTotal() * this.taxe;
+        const taxes = {
+            'Beer': 0.20,
+            'Cigar': 0.25,
+            'Eletronics': 0.30,
+            'Water': 0
+        }
+        return this.items.reduce((partialSum, { price, category }) => partialSum + (price * taxes[category]), 0);
     }
 }
